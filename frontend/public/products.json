@@ -1,0 +1,204 @@
+[
+  {
+    "_id": 101,
+    "title": "Adjustable Dumbbells",
+    "description": "Compact and versatile adjustable dumbbells, perfect for all fitness levels and home workouts.",
+    "category": "gym equipment",
+    "trending": true,
+    "coverImage": "product35.png",
+    "oldPrice": 199.99,
+    "newPrice": 149.99
+  },
+  {
+    "_id": 102,
+    "title": "Kettlebell Set",
+    "description": "Durable kettlebells ranging from 5lbs to 30lbs, ideal for strength training.",
+    "category": "gym equipment",
+    "trending": false,
+    "coverImage": "product11.png",
+    "oldPrice": 129.99,
+    "newPrice": 99.99
+  },
+  {
+    "_id": 103,
+    "title": "Resistance Bands",
+    "description": "Set of 5 resistance bands for flexibility and strength workouts.",
+    "category": "gym equipment",
+    "trending": true,
+    "coverImage": "product12.png",
+    "oldPrice": 39.99,
+    "newPrice": 29.99
+  },
+  {
+    "_id": 104,
+    "title": "Exercise Ball",
+    "description": "Anti-burst stability ball for yoga, Pilates, and core exercises.",
+    "category": "gym equipment",
+    "trending": false,
+    "coverImage": "product9.png",
+    "oldPrice": 24.99,
+    "newPrice": 19.99
+  },
+  {
+    "_id": 105,
+    "title": "Running Shoes",
+    "description": "Lightweight and breathable running shoes for maximum comfort.",
+    "category": "sportswear",
+    "trending": true,
+    "coverImage": "product33.png",
+    "oldPrice": 89.99,
+    "newPrice": 69.99
+  },
+  {
+    "_id": 106,
+    "title": "Workout Leggings",
+    "description": "High-waisted leggings with moisture-wicking fabric for intense workouts.",
+    "category": "sportswear",
+    "trending": false,
+    "coverImage": "product15.png",
+    "oldPrice": 49.99,
+    "newPrice": 39.99
+  },
+  {
+    "_id": 107,
+    "title": "Athletic Tank Top",
+    "description": "Breathable and flexible tank top, perfect for gym or outdoor training.",
+    "category": "sportswear",
+    "trending": true,
+    "coverImage": "product31.png",
+    "oldPrice": 29.99,
+    "newPrice": 19.99
+  },
+  {
+    "_id": 108,
+    "title": "Training Shorts",
+    "description": "Comfortable and durable training shorts with an elastic waistband.",
+    "category": "sportswear",
+    "trending": false,
+    "coverImage": "product23.png",
+    "oldPrice": 34.99,
+    "newPrice": 24.99
+  },
+  {
+    "_id": 109,
+    "title": "Treadmill",
+    "description": "Foldable treadmill with multiple speed settings and tracking features.",
+    "category": "cardio equipment",
+    "trending": true,
+    "coverImage": "product18.png",
+    "oldPrice": 999.99,
+    "newPrice": 799.99
+  },
+  {
+    "_id": 110,
+    "title": "Stationary Bike",
+    "description": "Compact stationary bike with adjustable resistance levels.",
+    "category": "cardio equipment",
+    "trending": false,
+    "coverImage": "product19.png",
+    "oldPrice": 399.99,
+    "newPrice": 299.99
+  },
+  {
+    "_id": 111,
+    "title": "Rowing Machine",
+    "description": "High-performance rowing machine for a full-body workout.",
+    "category": "cardio equipment",
+    "trending": true,
+    "coverImage": "product25.png",
+    "oldPrice": 599.99,
+    "newPrice": 499.99
+  },
+  {
+    "_id": 112,
+    "title": "Elliptical Trainer",
+    "description": "Low-impact elliptical trainer with digital display and pulse sensors.",
+    "category": "cardio equipment",
+    "trending": false,
+    "coverImage": "product21.png",
+    "oldPrice": 699.99,
+    "newPrice": 599.99
+  },
+  {
+    "_id": 113,
+    "title": "Protein Powder",
+    "description": "High-quality whey protein for muscle recovery and growth.",
+    "category": "nutrition",
+    "trending": true,
+    "coverImage": "product22.png",
+    "oldPrice": 49.99,
+    "newPrice": 39.99
+  },
+  {
+    "_id": 114,
+    "title": "Energy Bars",
+    "description": "Nutritious energy bars packed with protein and natural ingredients.",
+    "category": "nutrition",
+    "trending": false,
+    "coverImage": "product34.png",
+    "oldPrice": 19.99,
+    "newPrice": 14.99
+  },
+  {
+    "_id": 115,
+    "title": "Pre-Workout Supplement",
+    "description": "Boost your energy and focus during workouts with this premium pre-workout formula.",
+    "category": "nutrition",
+    "trending": true,
+    "coverImage": "product24.png",
+    "oldPrice": 34.99,
+    "newPrice": 29.99
+  },
+  {
+    "_id": 116,
+    "title": "Hydration Powder",
+    "description": "Replenish electrolytes with this effective hydration supplement.",
+    "category": "nutrition",
+    "trending": false,
+    "coverImage": "product25.png",
+    "oldPrice": 24.99,
+    "newPrice": 19.99
+  },
+  {
+    "_id": 117,
+    "title": "Gym Bag",
+    "description": "Spacious and durable gym bag with multiple compartments.",
+    "category": "gym accessories",
+    "trending": true,
+    "coverImage": "product26.png",
+    "oldPrice": 49.99,
+    "newPrice": 39.99
+  },
+  {
+    "_id": 118,
+    "title": "Wrist Wraps",
+    "description": "Supportive wrist wraps for weightlifting and heavy lifting.",
+    "category": "gym accessories",
+    "trending": false,
+    "coverImage": "product27.png",
+    "oldPrice": 19.99,
+    "newPrice": 14.99
+  },
+  {
+    "_id": 119,
+    "title": "Foam Roller",
+    "description": "High-density foam roller for muscle recovery and pain relief.",
+    "category": "gym accessories",
+    "trending": true,
+    "coverImage": "product4.png",
+    "oldPrice": 34.99,
+    "newPrice": 24.99
+  },
+  {
+    "_id": 120,
+    "title": "Yoga Mat",
+    "description": "Non-slip yoga mat for stretching and meditation exercises.",
+    "category": "gym accessories",
+    "trending": false,
+    "coverImage": "product6.png",
+    "oldPrice": 29.99,
+    "newPrice": 19.99
+  }
+]
+
+  
