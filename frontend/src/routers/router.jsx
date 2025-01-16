@@ -17,7 +17,7 @@ import UserDashboard from "../pages/dashboard/users/UserDashboard";
 import AddProduct from "../pages/dashboard/AddProduct/AddProduct";
 import ManageProducts from "../pages/dashboard/manageProducts/ManageProducts";
 //import UserDashboard from "../pages/dashboard/users/UserDashboard";
-import UpdateProduct from "../pages/dashboard/EditProduct/Updateproduct";
+import UpdateProduct from "../pages/dashboard/EditProduct/UpdateProduct";
 
 
 const router = createBrowserRouter([
