@@ -1,6 +1,6 @@
-![Screenshot (3)](https://github.com/user-attachments/assets/24fd60a4-7531-4984-82ac-7dbf3169de6d)
+![Screenshot (3)](https://github.com/user-attachments/assets/6c72ae83-8d2e-4803-bcc4-659540924d22)
+![Screenshot (2)](https://github.com/user-attachments/assets/3c4a9b2b-6586-464e-b07f-20f03e6d0d96)
 
-![Screenshot (1)](https://github.com/user-attachments/assets/f1c87bc6-6f7d-4448-8287-bd78ea196cfe)
 How to run this project:
 
 For Frontend
