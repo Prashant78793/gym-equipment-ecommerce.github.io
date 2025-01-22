@@ -1,4 +1,5 @@
-![Screenshot (2)](https://github.com/user-attachments/assets/72889555-6fd3-438b-95a9-876c5930cf78)
+![Screenshot (3)](https://github.com/user-attachments/assets/24fd60a4-7531-4984-82ac-7dbf3169de6d)
+
 ![Screenshot (1)](https://github.com/user-attachments/assets/f1c87bc6-6f7d-4448-8287-bd78ea196cfe)
 How to run this project:
 
