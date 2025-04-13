@@ -1,5 +1,5 @@
 const getBaseUrl = () => {
-    return "https://gym-equipment-ecommerce-github-io.onrender.com"
+    return "https://localhost:5000"
 }
 
 export default getBaseUrl;
