@@ -4,9 +4,15 @@ import { IoSearchOutline } from "react-icons/io5";
 import { HiOutlineUser } from "react-icons/hi";
 
 import avatar from "../assets/avatar.png";
+<<<<<<< HEAD
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+=======
+import { useEffect, useState, useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
+>>>>>>> 988a08d (paymentpage)
 import { useAuth } from "../context/AuthContext";
+import { clearCart } from "../redux/features/cart/cartSlice";
 
 const navigation = [
     { name: "Dashboard", href: "/user-dashboard" },
@@ -17,6 +23,14 @@ const navigation = [
 
 const Navbar = () => {
     const [sticky, setSticky] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const cartItems = useSelector((state) => state.cart.cartItems);
+    const { currentUser, logout } = useAuth();
+    const dropdownRef = useRef(null);
+    const navigate = useNavigate();
+    const [searchValue, setSearchValue] = useState("");
+    const dispatch = useDispatch();
+
     useEffect(() => {
         const handleScroll = () => {
             setSticky(window.scrollY > 0);
@@ -27,12 +41,28 @@ const Navbar = () => {
         };
     }, []);
 
+<<<<<<< HEAD
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const cartItems = useSelector((state) => state.cart.cartItems);
     const { currentUser, logout } = useAuth();
+=======
+    useEffect(() => {
+        if (!isDropdownOpen) return;
+        function handleClickOutside(event) {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsDropdownOpen(false);
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [isDropdownOpen]);
+>>>>>>> 988a08d (paymentpage)
 
     const handleLogOut = () => {
         logout();
+        dispatch(clearCart()); // logout hone par cart reset
     };
 
     return (
@@ -85,7 +115,11 @@ const Navbar = () => {
                                                 <li key={item.name} onClick={() => setIsDropdownOpen(false)}>
                                                     <Link
                                                         to={item.href}
+<<<<<<< HEAD
                                                         className="block px-4 py-2 text-sm hover:bg-gray-100"
+=======
+                                                        className="block px-4 py-2 text-sm hover:bg-gray-100 text-gray-900"
+>>>>>>> 988a08d (paymentpage)
                                                     >
                                                         {item.name}
                                                     </Link>

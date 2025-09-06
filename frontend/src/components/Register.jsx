@@ -1,26 +1,29 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FaGoogle } from "react-icons/fa";
 import { useForm } from "react-hook-form"
 import { useAuth } from '../context/AuthContext';
+import { useDispatch } from "react-redux";
+import { clearCart } from "../redux/features/cart/cartSlice";
+
 const Register = () => {
     const [message, setMessage] = useState("");
-     const {registerUser, signInWithGoogle} = useAuth();
-    console.log(registerUser)
+    const { registerUser, signInWithGoogle } = useAuth();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
     const {
         register,
         handleSubmit,
-        watch,
         formState: { errors },
       } = useForm()
 
-    //   register user
-
       const onSubmit = async(data) => {
-        console.log(data)
         try {
             await registerUser(data.email, data.password);
-            alert("User registered successfully!")
+            dispatch(clearCart()); // signup ke baad cart reset
+            alert("User registered successfully!");
+            navigate("/")
         } catch (error) {
            setMessage("Please provide a valid email and password") 
            console.error(error)
@@ -30,6 +33,7 @@ const Register = () => {
       const handleGoogleSignIn = async() => {
         try {
             await signInWithGoogle();
+            dispatch(clearCart()); // google signup/login ke baad reset
             alert("Login successful!");
             navigate("/")
         } catch (error) {
@@ -37,6 +41,7 @@ const Register = () => {
             console.error(error)
         }
       }
+
   return (
     <div className='h-[calc(100vh-120px)] flex justify-center items-center '>
     <div className='w-full max-w-sm mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>

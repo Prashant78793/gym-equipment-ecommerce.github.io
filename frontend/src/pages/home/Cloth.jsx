@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper/modules';
-import cloth1 from "../../assets/cloth/cloth-1.png"
+import cloth1 from "../../assets/cloth/cloth1.png"
 import cloth2 from "../../assets/cloth/cloth-2.png"
 import cloth3 from "../../assets/cloth/cloth-3.png"
 
