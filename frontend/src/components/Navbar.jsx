@@ -1,16 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { HiMiniBars3CenterLeft, HiOutlineHeart, HiOutlineShoppingCart } from "react-icons/hi2";
 import { IoSearchOutline } from "react-icons/io5";
 import { HiOutlineUser } from "react-icons/hi";
 
 import avatar from "../assets/avatar.png";
-<<<<<<< HEAD
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-=======
 import { useEffect, useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
->>>>>>> 988a08d (paymentpage)
 import { useAuth } from "../context/AuthContext";
 import { clearCart } from "../redux/features/cart/cartSlice";
 
@@ -31,6 +26,7 @@ const Navbar = () => {
     const [searchValue, setSearchValue] = useState("");
     const dispatch = useDispatch();
 
+    // Sticky navbar on scroll
     useEffect(() => {
         const handleScroll = () => {
             setSticky(window.scrollY > 0);
@@ -41,11 +37,7 @@ const Navbar = () => {
         };
     }, []);
 
-<<<<<<< HEAD
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const cartItems = useSelector((state) => state.cart.cartItems);
-    const { currentUser, logout } = useAuth();
-=======
+    // Close dropdown on outside click
     useEffect(() => {
         if (!isDropdownOpen) return;
         function handleClickOutside(event) {
@@ -58,7 +50,6 @@ const Navbar = () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, [isDropdownOpen]);
->>>>>>> 988a08d (paymentpage)
 
     const handleLogOut = () => {
         logout();
@@ -89,6 +80,8 @@ const Navbar = () => {
                         <input
                             type="text"
                             placeholder="Search here"
+                            value={searchValue}
+                            onChange={(e) => setSearchValue(e.target.value)}
                             className={`w-full py-1 md:px-8 px-6 rounded-md focus:outline-none transition-colors ${
                                 sticky ? "bg-gray-700 text-white" : "bg-gray-200 text-black"
                             }`}
@@ -96,7 +89,7 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className="relative flex items-center md:space-x-3 space-x-2">
-                    <div>
+                    <div ref={dropdownRef}>
                         {currentUser ? (
                             <>
                                 <button onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
@@ -112,14 +105,13 @@ const Navbar = () => {
                                     <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md z-40">
                                         <ul className="py-2">
                                             {navigation.map((item) => (
-                                                <li key={item.name} onClick={() => setIsDropdownOpen(false)}>
+                                                <li
+                                                    key={item.name}
+                                                    onClick={() => setIsDropdownOpen(false)}
+                                                >
                                                     <Link
                                                         to={item.href}
-<<<<<<< HEAD
-                                                        className="block px-4 py-2 text-sm hover:bg-gray-100"
-=======
                                                         className="block px-4 py-2 text-sm hover:bg-gray-100 text-gray-900"
->>>>>>> 988a08d (paymentpage)
                                                     >
                                                         {item.name}
                                                     </Link>
@@ -154,7 +146,10 @@ const Navbar = () => {
                             }`}
                         />
                     </button>
-                    <Link to="/cart" className="bg-primary p-1 sm:px-6 px-2 flex items-center rounded-sm">
+                    <Link
+                        to="/cart"
+                        className="bg-primary p-1 sm:px-6 px-2 flex items-center rounded-sm"
+                    >
                         <HiOutlineShoppingCart
                             className={`text-2xl transition-colors ${
                                 sticky ? "text-white" : "text-gray-900"
@@ -171,4 +166,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
