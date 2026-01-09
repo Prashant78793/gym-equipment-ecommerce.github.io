@@ -12,11 +12,17 @@ create a .env.local file in the backend root directory as the same level where t
 >>> Stepup firebase app and configure the environment
 
 VITE_API_KEY=
+
 VITE_AUTH_DOMAIN=
+
 VITE_PROJECT_ID=
+
 VITE_STORAGE_BUCKET=
+
 VITE_MESSAGING_SENDERID=
+
 VITE_APPID=
+
 Then run npm install commend to install node dependencies.
 Finally, to run the project, use npm run dev command.
 For Backend
