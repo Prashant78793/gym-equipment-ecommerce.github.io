@@ -11,6 +11,7 @@ function App() {
     <>
       <AuthProvide>
         <Navbar />
+        <div className="h-20" aria-hidden="true" />
          <div className="w-full flex justify-center items-center mb-4">
           <Ai />
         </div>

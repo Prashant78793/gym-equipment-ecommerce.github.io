@@ -18,12 +18,12 @@ const ProductCard = ({product}) => {
   <div
     className="flex flex-col sm:flex-row sm:items-center sm:h-72  sm:justify-center gap-4"
   >
-    <div className="sm:h-72 sm:flex-shrink-0 border rounded-md">
+    <div className="sm:h-72 h-48 sm:flex-shrink-0 border rounded-md overflow-hidden">
       <Link to = {`/products/${product._id}`}>
         <img
           src={`${getImgUrl(product?.coverImage)}`}
           alt=""
-          className="w-full bg-cover p-2 rounded-md cursor-pointer hover:scale-105 transition-all duration-200"
+          className="w-full h-full object-cover p-2 rounded-md cursor-pointer hover:scale-105 transition-transform duration-200"
         />
       </Link>
     </div>
