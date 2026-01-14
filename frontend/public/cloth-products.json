@@ -1,0 +1,137 @@
+[
+  {
+    "_id": "cloth-001",
+    "title": "Breathable Workout T-Shirt",
+    "description": "Moisture-wicking fabric keeps you cool and dry during intense workouts.",
+    "coverImage": "https://chkokko.com/cdn/shop/products/AVP_2643_2.jpg?v=1679350368",
+    "newPrice": 19.99,
+    "oldPrice": 29.99,
+    "category": "sportswear"
+  },
+  {
+    "_id": "cloth-002",
+    "title": "Women's Compression Leggings",
+    "description": "High-compression leggings for support during running, yoga and training.",
+    "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQwDsFcB4guqvWD09l9Ulg0I8XUn6rTJa2jQ&s",
+    "newPrice": 34.99,
+    "oldPrice": 49.99,
+    "category": "sportswear"
+  },
+  {
+    "_id": "cloth-003",
+    "title": "Lightweight Gym Shorts",
+    "description": "Breathable shorts designed for freedom of movement during workouts.",
+    "coverImage": "https://www.radowl.co.in/cdn/shop/files/1_26869d15-0db0-4f8f-a6ae-16bd78ed1540.webp?v=1722755405",
+    "newPrice": 17.99,
+    "oldPrice": 24.99,
+    "category": "sportswear"
+  },
+  {
+    "_id": "cloth-004",
+    "title": "Men's Training Hoodie",
+    "description": "Comfortable hoodie for warmups and cool-downs with soft inner lining.",
+    "coverImage": "https://static.nike.com/a/images/t_web_pdp_936_v2/f_auto/48eaef5c-a147-4e3c-a792-860844f5dde1/AS+M+NP+DF+NPT+MIDLAYER+HOODIE.png",
+    "newPrice": 39.99,
+    "oldPrice": 59.99,
+    "category": "sportswear"
+  },
+  {
+    "_id": "cloth-005",
+    "title": "Performance Sports Bra",
+    "description": "High-support sports bra for high-impact workouts and running.",
+    "coverImage": "https://yamayoga.in/cdn/shop/files/AeroBraTop_Espresso5.png?v=1710436100&width=800",
+    "newPrice": 24.99,
+    "oldPrice": 34.99,
+    "category": "sportswear"
+  },
+  {
+    "_id": "cloth-006",
+    "title": "Reflective Running Jacket",
+    "description": "Lightweight reflective jacket ideal for early morning or night runs.",
+    "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGNh27ndUwAsh3nKE-qW_p5KMsvSZGsykbCw&s",
+    "newPrice": 49.99,
+    "oldPrice": 69.99,
+    "category": "sportswear"
+  },
+  {
+    "_id": "cloth-007",
+    "title": "Cotton Gym Tank Top",
+    "description": "Soft cotton tank for relaxed gym sessions and casual wear.",
+    "coverImage": "https://m.media-amazon.com/images/I/81Eu6i+TMVL._AC_UY1100_.jpg",
+    "newPrice": 14.99,
+    "oldPrice": 19.99,
+    "category": "sportswear"
+  },
+  {
+    "_id": "cloth-008",
+    "title": "Workout Headband",
+    "description": "Sweat-wicking headband keeps hair out of your face during workouts.",
+    "coverImage": "https://m.media-amazon.com/images/I/71tkXtVNaDL._AC_UY1100_.jpg",
+    "newPrice": 6.99,
+    "oldPrice": 9.99,
+    "category": "gym accessories"
+  },
+  {
+    "_id": "cloth-009",
+    "title": "Compression Arm Sleeves",
+    "description": "Arm sleeves to support circulation and muscle recovery.",
+    "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqkzEu_jG5pB-TTe4KUBEG2aNhUoZZWEzoEQ&s",
+    "newPrice": 12.99,
+    "oldPrice": 18.99,
+    "category": "gym accessories"
+  },
+  {
+    "_id": "cloth-010",
+    "title": "Grip Workout Gloves",
+    "description": "Protective gloves for heavy lifting and better grip.",
+    "coverImage": "https://assets.myntassets.com/w_360,q_50,,dpr_2,fl_progressive,f_webp/assets/images/2024/AUGUST/16/NGFX2qqV_127ae287b8784ca79b5cd2925da03fb7.jpg",
+    "newPrice": 15.99,
+    "oldPrice": 22.99,
+    "category": "gym accessories"
+  },
+  {
+    "_id": "cloth-011",
+    "title": "Yoga Leggings",
+    "description": "Stretchy leggings for yoga and mobility workouts.",
+    "coverImage": "https://m.media-amazon.com/images/I/713em7AN5YL._AC_UY1100_.jpg",
+    "newPrice": 29.99,
+    "oldPrice": 39.99,
+    "category": "sportswear"
+  },
+  {
+    "_id": "cloth-012",
+    "title": "Seamless Sports Top",
+    "description": "Seamless construction for chafe-free comfort during long workouts.",
+    "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO5WbBF0kfqU-uuAqBrhK5x2URKjTQE9h89g&s",
+    "newPrice": 22.99,
+    "oldPrice": 29.99,
+    "category": "sportswear"
+  },
+  {
+    "_id": "cloth-013",
+    "title": "Thermal Training Pants",
+    "description": "Warm training pants for outdoor workouts in colder weather.",
+    "coverImage": "https://assets.ajio.com/medias/sys_master/root/h3b/h4f/15560320385054/-473Wx593H-460557797-black-MODEL.jpg",
+    "newPrice": 39.99,
+    "oldPrice": 54.99,
+    "category": "sportswear"
+  },
+  {
+    "_id": "cloth-014",
+    "title": "Compression Socks",
+    "description": "Socks designed to improve circulation and recovery.",
+    "coverImage": "https://m.media-amazon.com/images/I/71JZwfFo+xL._AC_UF1000,1000_QL80_.jpg",
+    "newPrice": 9.99,
+    "oldPrice": 14.99,
+    "category": "gym accessories"
+  },
+  {
+    "_id": "cloth-015",
+    "title": "Sporty Windbreaker",
+    "description": "Wind-resistant shell for outdoor runs and cycling.",
+    "coverImage": "https://m.media-amazon.com/images/I/61lI7BChShL._AC_UY1100_.jpg",
+    "newPrice": 44.99,
+    "oldPrice": 59.99,
+    "category": "sportswear"
+  }
+]

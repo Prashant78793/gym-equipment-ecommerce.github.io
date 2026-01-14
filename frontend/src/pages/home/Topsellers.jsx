@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ProductCard from '../products/ProductCard';
+import { Link } from 'react-router-dom'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation} from 'swiper/modules';
@@ -19,20 +20,27 @@ const Topsellers = () => {
     
 
 
-  return (
-    <div className='py-10'>
-         <h2 className='text-3xl font-semibold mb-6'>Top Products</h2>
-      <div className='mb-8 flex items-center'>
-        <select 
-        onChange={(e) => setSelectedCategory(e.target.value)}
-        name="category" id="category" className='border bg-[#EAEAEA] border-gray-300 rounded-md px-4 py-2 focus:outline-none'>
-            {
-                categories.map((category ,index) => (
-                    <option key={index} value ={category}>{category}</option>
-                ))
-            }
-        </select>
-      </div>
+    return (
+        <div className='py-10'>
+                 <h2 className='text-3xl font-semibold mb-6'>Top Products</h2>
+            <div className='mb-8 flex items-center justify-between gap-4'>
+                <div className='flex items-center gap-4'>
+                    <select 
+                    onChange={(e) => setSelectedCategory(e.target.value)}
+                    name="category" id="category" className='border bg-[#EAEAEA] border-gray-300 rounded-md px-4 py-2 focus:outline-none'>
+                            {
+                                    categories.map((category ,index) => (
+                                            <option key={index} value ={category}>{category}</option>
+                                    ))
+                            }
+                    </select>
+                </div>
+
+                {/* Right side text / See all link aligned with the dropdown */}
+                <div className='text-right'>
+                    <Link to="/products" className='text-gray-700 font-medium hover:text-yellow-500'>See all</Link>
+                </div>
+            </div>
       <Swiper
                 slidesPerView={1}
                 spaceBetween={30}

@@ -5,6 +5,7 @@ import Login from "../components/Login";
 import Register from "../components/Register";
 import Cartpage from "../pages/products/Cartpage";
 import CheckoutPage from "../pages/products/CheckoutPage";
+import AllProducts from "../pages/products/AllProducts";
 import SingleProduct from "../pages/products/SingleProduct";
 import PrivateRoute from "./PrivateRoute";
 import OrderPage from "../pages/products/OrderPage";
@@ -74,6 +75,10 @@ const router = createBrowserRouter([
             <OnlinePaymentPage />
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/products",
+        element: <AllProducts />,
       },
       {
         path: "/products/:id",
