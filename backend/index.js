@@ -7,10 +7,16 @@ const port = process.env.PORT || 4000;
 require('dotenv').config()
 
 app.use(express.json());
-app.use(cors({
-    origin: ['http://localhost:5173', 'http://localhost:5174'],
-    credentials: true
-}))
+const allowedOrigins = process.env.ALLOWED_ORIGINS
+  ? process.env.ALLOWED_ORIGINS.split(',')
+  : ['http://localhost:5173', 'http://localhost:5174'];
+
+app.use(
+  cors({
+    origin: allowedOrigins,
+    credentials: true,
+  })
+);
 
 const productRoutes = require('./src/products/product.route');
 const orderRoutes = require('./src/orders/order.route');
