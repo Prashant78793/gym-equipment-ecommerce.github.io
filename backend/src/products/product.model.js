@@ -23,7 +23,7 @@ const productSchema = new mongoose.Schema({
     },
     oldPrice: {
         type: Number,
-        // required: true,
+
     },
     newPrice: {
         type: Number,
@@ -32,11 +32,7 @@ const productSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now,
-    }}
-//   }, {
-//     timestamps: true,
-//   }
- );
+    }});
 
   const Product= mongoose.model('Product', productSchema);
 

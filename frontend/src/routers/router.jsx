@@ -20,7 +20,9 @@ import UpdateProduct from "../pages/dashboard/EditProduct/UpdateProduct";
 import Contact from "../components/Contact";   
 import About from "../components/About";        
 import OnlinePaymentPage from "../pages/products/OnlinePaymentPage";  
-import Ai from "../pages/home/Ai" // ✅ Import Online Payment Page
+import Ai from "../pages/home/Ai"
+import AllCloths from "../pages/cloths/AllCloths";
+import SingleCloth from "../pages/cloths/SingleCloth";
 
 const router = createBrowserRouter([
   {
@@ -69,7 +71,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/online-payment",   // ✅ New Online Payment Route
+        path: "/online-payment",
         element: (
           <PrivateRoute>
             <OnlinePaymentPage />
@@ -83,6 +85,14 @@ const router = createBrowserRouter([
       {
         path: "/products/:id",
         element: <SingleProduct />,
+      },
+      {
+        path: "/cloths",
+        element: <AllCloths />,
+      },
+      {
+        path: "/cloths/:id",
+        element: <SingleCloth />,
       },
       {
         path: "/contact",

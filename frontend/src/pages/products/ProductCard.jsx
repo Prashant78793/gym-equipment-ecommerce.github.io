@@ -14,7 +14,6 @@ const ProductCard = ({product}) => {
     dispatch(addToCart(item))
   }
 
-  // Support absolute URLs (CDN / external images) or asset filenames
   const imageSrc = React.useMemo(() => {
     const img = product?.coverImage || ''
     if (!img) return ''
@@ -28,37 +27,54 @@ const ProductCard = ({product}) => {
     }
   }, [product])
   return (
-    <div className=" rounded-lg transition-shadow duration-300">
-  <div
-    className="flex flex-col sm:flex-row sm:items-center sm:h-72  sm:justify-center gap-4"
-  >
-    <div className="sm:h-72 h-48 sm:flex-shrink-0 border rounded-md overflow-hidden">
-      <Link to = {`/products/${product._id}`}>
-        <img
-          src={imageSrc}
-          alt={product?.title || product?.tittle || ''}
-          className="w-full h-full object-cover p-2 rounded-md cursor-pointer hover:scale-105 transition-transform duration-200"
-        />
-      </Link>
-    </div>
+    <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 h-full flex flex-col">
+      {/* Image Container */}
+      <div className="h-48 md:h-56 lg:h-64 w-full border-b rounded-t-lg overflow-hidden bg-gray-100">
+        <Link to={`/products/${product._id}`} className="block w-full h-full">
+          <img
+            src={imageSrc}
+            alt={product?.title || product?.tittle || ''}
+            className="w-full h-full object-cover hover:scale-110 transition-transform duration-300 cursor-pointer"
+          />
+        </Link>
+      </div>
 
-    <div>
-      <Link to={`/products/${product._id}`}>
-        <h3 className="text-xl font-semibold hover:text-blue-600 mb-3">{product?.title || product?.tittle}</h3>
-      </Link>
-      <p className="text-gray-600 mb-5">{product?.description ? (product.description.length > 80 ? `${product.description.slice(0, 80)}...` : product.description) : ''}</p>
-      <p className="font-medium mb-5">
-      ${product?.newPrice} <span className="line-through font-normal ml-2">$ {product?.oldPrice}</span>
-      </p>
-      <button 
-      onClick={() => handleAddToCart(product)}
-      className="btn-primary px-6 space-x-1 flex items-center gap-1 ">
-        <FiShoppingCart className="" />
-        <span>Add to Cart</span>
-      </button>
+      {/* Content Container */}
+      <div className="p-4 flex-1 flex flex-col">
+        <Link to={`/products/${product._id}`}>
+          <h3 className="text-lg font-semibold hover:text-blue-600 mb-2 line-clamp-2 transition-colors duration-200">
+            {product?.title || product?.tittle}
+          </h3>
+        </Link>
+
+        <p className="text-sm text-gray-600 mb-4 line-clamp-2 flex-grow">
+          {product?.description
+            ? product.description.length > 50
+              ? `${product.description.slice(0, 50)}...`
+              : product.description
+            : ''}
+        </p>
+
+        {/* Price Section */}
+        <div className="mb-4">
+          <p className="font-semibold text-lg">
+            ${product?.newPrice}
+            {product?.oldPrice && (
+              <span className="line-through text-gray-500 font-normal text-sm ml-2">${product?.oldPrice}</span>
+            )}
+          </p>
+        </div>
+
+        {/* Add to Cart Button */}
+        <button
+          onClick={() => handleAddToCart(product)}
+          className="btn-primary w-full py-2 px-4 flex items-center justify-center gap-2 rounded hover:opacity-90 transition-opacity duration-200 font-semibold"
+        >
+          <FiShoppingCart className="text-lg" />
+          <span>Add to Cart</span>
+        </button>
+      </div>
     </div>
-  </div>
-</div>
   )
 }
 

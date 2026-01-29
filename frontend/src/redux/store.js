@@ -7,10 +7,10 @@ export const store = configureStore({
   reducer: {
     cart: cartReducer,
     [productsApi.reducerPath]: productsApi.reducer,
-    [ordersApi.reducerPath]: ordersApi.reducer, // Add ordersApi.reducer
+    [ordersApi.reducerPath]: ordersApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()
-      .concat(productsApi.middleware) // Add productsApi.middleware
-      .concat(ordersApi.middleware), // Add ordersApi.middleware
+      .concat(productsApi.middleware)
+      .concat(ordersApi.middleware),
 });

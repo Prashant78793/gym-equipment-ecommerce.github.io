@@ -4,14 +4,10 @@ const Order = require('../orders/order.model');
 const Product = require('../products/product.model');
 const router = express.Router();
 
-
-// Function to calculate admin stats
 router.get("/", async (req, res) => {
     try {
-        // 1. Total number of orders
         const totalOrders = await Order.countDocuments();
 
-        // 2. Total sales (sum of all totalPrice from orders)
         const totalSales = await Order.aggregate([
             {
                 $group: {
@@ -21,31 +17,26 @@ router.get("/", async (req, res) => {
             }
         ]);
 
-        // 4. Trending books statistics: 
         const trendingProductsCount = await Product.aggregate([
-            { $match: { trending: true } },  // Match only trending books
-            { $count: "trendingproductsCount" }  // Return the count of trending books
+            { $match: { trending: true } },
+            { $count: "trendingproductsCount" }
         ]);
-        
-        // If you want just the count as a number, you can extract it like this:
+
         const trendingProducts = trendingProductsCount.length > 0 ? trendingProductsCount[0].trendingProductsCount : 0;
 
-        // 5. Total number of products
         const totalProducts = await Product.countDocuments();
 
-        // 6. Monthly sales (group by month and sum total sales for each month)
         const monthlySales = await Order.aggregate([
             {
                 $group: {
-                    _id: { $dateToString: { format: "%Y-%m", date: "$createdAt" } },  // Group by year and month
-                    totalSales: { $sum: "$totalPrice" },  // Sum totalPrice for each month
-                    totalOrders: { $sum: 1 }  // Count total orders for each month
+                    _id: { $dateToString: { format: "%Y-%m", date: "$createdAt" } },
+                    totalSales: { $sum: "$totalPrice" },
+                    totalOrders: { $sum: 1 }
                 }
             },
-            { $sort: { _id: 1 } }  
+            { $sort: { _id: 1 } }
         ]);
 
-        // Result summary
         res.status(200).json({  totalOrders,
             totalSales: totalSales[0]?.totalSales || 0,
             trendingProducts,

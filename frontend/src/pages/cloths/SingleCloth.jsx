@@ -1,27 +1,50 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { FiShoppingCart, FiArrowLeft } from 'react-icons/fi'
 import { useParams, useNavigate } from 'react-router-dom'
 import { getImgUrl } from '../../utils/getImgUrl'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../../redux/features/cart/cartSlice'
-import { useFetchProductByIdQuery } from '../../redux/features/products/productsApi'
 
-const SingleProduct = () => {
+const SingleCloth = () => {
   const { id } = useParams()
   const navigate = useNavigate()
-  const { data: product, isLoading, isError } = useFetchProductByIdQuery(id)
   const dispatch = useDispatch()
+  const [product, setProduct] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false)
 
   const handleAddToCart = (item) => dispatch(addToCart(item))
 
   const [mainImage, setMainImage] = useState(null)
 
-  const productImages = [
-    getImgUrl(product?.coverImage),
+  useEffect(() => {
+    let mounted = true
+    fetch('/cloth-products.json')
+      .then(res => res.json())
+      .then(data => {
+        if (mounted) {
+          const foundProduct = data.find(p => p._id === id)
+          if (foundProduct) {
+            setProduct(foundProduct)
+          } else {
+            setError(true)
+          }
+        }
+      })
+      .catch(() => {
+        if (mounted) setError(true)
+      })
+      .finally(() => mounted && setLoading(false))
+
+    return () => { mounted = false }
+  }, [id])
+
+  const productImages = product ? [
+    product.coverImage.startsWith('http') ? product.coverImage : getImgUrl(product.coverImage),
     'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg',
     'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg',
     'https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg'
-  ]
+  ] : []
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
@@ -31,15 +54,15 @@ const SingleProduct = () => {
         </button>
       </div>
 
-      {isLoading ? (
+      {loading ? (
         <div className="py-20 text-center">Loading...</div>
-      ) : isError ? (
-        <div className="py-20 text-center text-red-500">Error happened while loading product info</div>
+      ) : error ? (
+        <div className="py-20 text-center text-red-500">Error happened while loading cloth info</div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div className="flex flex-col items-center">
             <div className="bg-gray-100 p-4 rounded-lg w-full flex items-center justify-center mb-6">
-              <img src={mainImage || productImages[0]} alt={product?.title || product?.tittle || 'Product'} className="max-h-[450px] object-contain" />
+              <img src={mainImage || productImages[0]} alt={product?.title || product?.tittle || 'Cloth'} className="max-h-[450px] object-contain" />
             </div>
 
             <div className="flex gap-4 flex-wrap justify-center">
@@ -60,10 +83,10 @@ const SingleProduct = () => {
           <div className="p-4">
             <h1 className="text-3xl font-bold mb-4">{product?.title || product?.tittle || 'Untitled'}</h1>
             <p className="text-gray-700 mb-2">
-              <strong>Published:</strong> {new Date(product?.createdAt).toLocaleDateString()}
+              <strong>Published:</strong> {new Date(product?.createdAt || Date.now()).toLocaleDateString()}
             </p>
             <p className="text-gray-700 mb-2 capitalize">
-              <strong>Category:</strong> {product?.category}
+              <strong>Category:</strong> {product?.category || 'Cloth'}
             </p>
             <p className="text-gray-700 mb-4">
               <strong>Description:</strong> {product?.description || ''}
@@ -92,4 +115,4 @@ const SingleProduct = () => {
   )
 }
 
-export default SingleProduct
+export default SingleCloth

@@ -1,20 +1,18 @@
 import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ai from '../../assets/ai.png';
-import { useAuth } from '../../context/AuthContext'; // <-- Import useAuth
+import { useAuth } from '../../context/AuthContext';
 
 const Ai = () => {
   const navigate = useNavigate();
   const recognitionRef = useRef(null);
-  const { currentUser, logout } = useAuth(); // <-- Get currentUser and logout
+  const { currentUser, logout } = useAuth();
 
-  // Speak function
   function speak(message) {
     let utterance = new window.SpeechSynthesisUtterance(message);
     window.speechSynthesis.speak(utterance);
   }
 
-  // Start recognition and handle result
   const handleClick = () => {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SpeechRecognition) {
@@ -23,20 +21,24 @@ const Ai = () => {
     }
     if (!recognitionRef.current) {
       recognitionRef.current = new SpeechRecognition();
-      recognitionRef.current.onresult = async (e) => { // <-- Make this async
+      recognitionRef.current.onresult = async (e) => {
         const transcript = e.results[0][0].transcript.trim().toLowerCase();
 
         let matched = false;
         const commands = [
-          { keywords: ["home", "homepage"], path: "/", message: "Opening home page" },
-          { keywords: ["cart", "my cart"], path: "/cart", message: "Opening cart page" },
-          { keywords: ["login", "log in"], path: "/login", message: "Opening login page" },
-          { keywords: ["register", "sign up"], path: "/register", message: "Opening register page" },
-          { keywords: ["contact", "contact us"], path: "/contact", message: "Opening contact page" },
-          { keywords: ["about", "about us"], path: "/about", message: "Opening about page" },
-          { keywords: ["checkout", "check out"], path: "/checkout", message: "Opening checkout page" },
-          { keywords: ["orders", "my orders"], path: "/orders", message: "Opening orders page" },
-          { keywords: ["admin", "admin login", "adminlogin"], path: "/admin", message: "Opening Admin page" },
+          { keywords: ["home", "homepage"], path: "/", message: "Open home page" },
+          { keywords: ["cart", "my cart"], path: "/cart", message: "Open cart page" },
+          { keywords: ["login", "log in"], path: "/login", message: "Open login page" },
+          { keywords: ["register", "sign up"], path: "/register", message: "Open register page" },
+          { keywords: ["contact", "contact us"], path: "/contact", message: "Open contact page" },
+          { keywords: ["about", "about us"], path: "/about", message: "Open about page" },
+          { keywords: ["checkout", "check out"], path: "/checkout", message: "Open checkout page" },
+          { keywords: ["orders", "my orders"], path: "/orders", message: "Open orders page" },
+          { keywords: ["admin", "admin login", "adminlogin"], path: "/admin", message: "Open Admin page" },
+          { keywords: ["products", "all products"], path: "/products", message: "Open all products page" },
+          { keywords: ["cloths", "clothes", "all cloths", "all clothes"], path: "/cloths", message: "Open all cloths page" },
+          { keywords: ["dashboard", "user dashboard"], path: "/user-dashboard", message: "Open user dashboard" },
+          { keywords: ["online payment", "payment"], path: "/online-payment", message: "Open online payment page" },
         ];
 
         for (const cmd of commands) {
@@ -48,7 +50,6 @@ const Ai = () => {
           }
         }
 
-        // Logout command using Firebase Auth
         if (!matched && transcript.includes("logout")) {
           if (!currentUser) {
             speak("Please login first");

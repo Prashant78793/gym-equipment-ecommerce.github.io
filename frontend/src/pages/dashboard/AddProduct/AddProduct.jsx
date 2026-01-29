@@ -48,9 +48,7 @@ const AddProduct = () => {
     <div className="max-w-lg   mx-auto md:p-6 p-3 bg-white rounded-lg shadow-md">
       <h2 className="text-2xl font-bold text-gray-800 mb-4">Add New Product</h2>
 
-      {/* Form starts here */}
       <form onSubmit={handleSubmit(onSubmit)} className=''>
-        {/* Reusable Input Field for Title */}
         <InputField
           label="Title"
           name="title"
@@ -68,7 +66,6 @@ const AddProduct = () => {
 
         />
 
-        {/* Reusable Select Field for Category */}
         <SelectField
           label="Category"
           name="category"
@@ -84,7 +81,6 @@ const AddProduct = () => {
           register={register}
         />
 
-        {/* Trending Checkbox */}
         <div className="mb-4">
           <label className="inline-flex items-center">
             <input
@@ -96,7 +92,6 @@ const AddProduct = () => {
           </label>
         </div>
 
-        {/* Old Price */}
         <InputField
           label="Old Price"
           name="oldPrice"
@@ -106,7 +101,6 @@ const AddProduct = () => {
          
         />
 
-        {/* New Price */}
         <InputField
           label="New Price"
           name="newPrice"
@@ -116,7 +110,6 @@ const AddProduct = () => {
           
         />
 
-        {/* Cover Image Upload */}
         <div className="mb-4">
           <label className="block text-sm font-semibold text-gray-700 mb-2">Cover Image</label>
           <input type="file" accept="image/*" onChange={handleFileChange} className="mb-2 w-full" />

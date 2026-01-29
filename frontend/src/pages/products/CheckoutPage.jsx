@@ -50,12 +50,11 @@ const CheckoutPage = () => {
     if (isLoading) return <div>Loading....</div>;
 
     return (
-        <section className="mt-20"> {/* 👈 Added margin-top so content appears below navbar */}
+        <section className="mt-20">
             <div className="min-h-screen p-6 bg-gray-100 flex items-center justify-center">
                 <div className="container max-w-screen-lg mx-auto">
                     <div className="flex flex-col lg:flex-row gap-6 mt-10">
 
-                        {/* Left Side - Cash On Delivery */}
                         <div className="flex-1 bg-white rounded shadow-lg p-6">
                             <h2 className="font-semibold text-xl text-gray-600 mb-2">Cash On Delivery</h2>
                             <p className="text-gray-500 mb-2">Total Price: ${totalPrice}</p>
@@ -82,7 +81,6 @@ const CheckoutPage = () => {
                             </form>
                         </div>
 
-                        {/* Right Side - Online Payment */}
                         <div className="flex-1 bg-white rounded shadow-lg p-6 flex flex-col items-center justify-center">
                             <h2 className="font-semibold text-xl text-gray-600 mb-4">Want to Pay Online?</h2>
                             <p className="text-gray-500 mb-6">Securely pay using card, UPI, or net banking.</p>

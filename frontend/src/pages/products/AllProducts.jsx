@@ -4,7 +4,7 @@ import ProductCard from './ProductCard'
 import { Link, useNavigate } from 'react-router-dom'
 import { FiArrowLeft } from 'react-icons/fi'
 
-const PAGE_SIZE = 9 // 3 columns x 3 rows
+const PAGE_SIZE = 9
 const categories = ["Choose a genre", "gym equipment", "gym accessories", "sportswear","cardio equipment","nutrition"]
 
 const AllProducts = () => {
@@ -28,19 +28,19 @@ const AllProducts = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-10">
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
         <div className="flex items-center gap-4">
-          <button onClick={() => navigate(-1)} className="p-2 rounded-md hover:bg-gray-100">
+          <button onClick={() => navigate(-1)} className="p-2 rounded-md hover:bg-gray-100 transition-colors">
             <FiArrowLeft className="text-lg" />
           </button>
-          <h2 className="text-3xl font-semibold">All Products</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold">All Products</h2>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
           <select
             value={selectedCategory}
             onChange={(e) => { setSelectedCategory(e.target.value); setPage(1); }}
-            className="border bg-[#EAEAEA] border-gray-300 rounded-md px-4 py-2 focus:outline-none"
+            className="border bg-[#EAEAEA] border-gray-300 rounded-md px-4 py-2 focus:outline-none text-sm md:text-base"
           >
             {categories.map((c, idx) => (
               <option key={idx} value={c}>{c}</option>
@@ -51,7 +51,7 @@ const AllProducts = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {current.map((product) => (
           <div key={product._id} className="h-full">
             <ProductCard product={product} />
@@ -59,10 +59,9 @@ const AllProducts = () => {
         ))}
       </div>
 
-      {/* Pagination */}
-      <div className="flex items-center justify-center gap-3 mt-8">
+      <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 mt-10">
         <button
-          className="px-4 py-2 rounded bg-gray-200 disabled:opacity-50"
+          className="px-3 md:px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-50 transition-colors text-sm md:text-base"
           onClick={() => setPage((p) => Math.max(1, p - 1))}
           disabled={page === 1}
         >
@@ -72,7 +71,11 @@ const AllProducts = () => {
         {Array.from({ length: totalPages }).map((_, i) => (
           <button
             key={i}
-            className={`px-3 py-1 rounded ${page === i + 1 ? 'bg-yellow-400' : 'bg-gray-100'}`}
+            className={`px-2 md:px-3 py-1 rounded text-sm md:text-base transition-colors ${
+              page === i + 1
+                ? 'bg-yellow-400 text-gray-900 font-semibold'
+                : 'bg-gray-100 hover:bg-gray-200'
+            }`}
             onClick={() => setPage(i + 1)}
           >
             {i + 1}
@@ -80,7 +83,7 @@ const AllProducts = () => {
         ))}
 
         <button
-          className="px-4 py-2 rounded bg-gray-200 disabled:opacity-50"
+          className="px-3 md:px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-50 transition-colors text-sm md:text-base"
           onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
           disabled={page === totalPages}
         >

@@ -22,7 +22,6 @@ const OnlinePaymentPage = () => {
       icon: "info",
       confirmButtonText: "OK",
     }).then(() => {
-      // ✅ Here you can integrate Razorpay/Stripe API
       navigate("/orders");
     });
   };
@@ -34,7 +33,6 @@ const OnlinePaymentPage = () => {
           Online Payment
         </h2>
 
-        {/* Payment Methods */}
         <div className="grid grid-cols-2 gap-4 mb-6">
           <button
             onClick={() => setPaymentMethod("UPI (Google Pay / PhonePe / Paytm)")}
@@ -95,7 +93,6 @@ const OnlinePaymentPage = () => {
           </button>
         </div>
 
-        {/* Payment Form */}
         <form onSubmit={handlePayment}>
           {paymentMethod && (
             <div className="mb-4">

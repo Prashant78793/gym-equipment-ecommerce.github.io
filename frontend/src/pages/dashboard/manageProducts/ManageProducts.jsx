@@ -9,7 +9,6 @@ const ManageProducts = () => {
 
     const [deleteProduct] = useDeleteProductMutation()
 
-    // Handle deleting a book
     const handleDeleteProduct = async (id) => {
         try {
             await deleteProduct(id).unwrap();
@@ -22,7 +21,6 @@ const ManageProducts = () => {
         }
     };
 
-    // Handle navigating to Edit Book page
     const handleEditClick = (id) => {
         navigate(`dashboard/edit-product/${id}`);
     };

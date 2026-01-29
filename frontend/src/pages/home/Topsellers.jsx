@@ -36,7 +36,6 @@ const Topsellers = () => {
                     </select>
                 </div>
 
-                {/* Right side text / See all link aligned with the dropdown */}
                 <div className='text-right'>
                     <Link to="/products" className='text-gray-700 font-medium hover:text-yellow-500'>See all</Link>
                 </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import Banner from './Banner';
 import Topsellers from './Topsellers';
 import Cloth from './Cloth';
-import Ai from './Ai'; // ✅ Import Ai component
+import Ai from './Ai';
 
 const Home = () => {
   return (
@@ -10,7 +10,7 @@ const Home = () => {
       <Banner />
       <Topsellers />
       <Cloth />
-      <Ai /> {/* ✅ Add Ai component here */}
+      <Ai />
     </>
   );
 };
