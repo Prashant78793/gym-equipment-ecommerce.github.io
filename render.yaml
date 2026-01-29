@@ -1,0 +1,22 @@
+# Render blueprint to deploy backend (Node service) and frontend (Static site)
+# IMPORTANT: Do NOT commit secrets to the repo. Set `DB_URL` and `JWT_SECRET_KEY`
+# and any other secrets in the Render dashboard under each service's Environment.
+
+services:
+  - type: web
+    name: gym-backend
+    env: node
+    region: oregon
+    branch: main
+    root: backend
+    buildCommand: npm install
+    startCommand: npm start
+    plan: free
+
+staticSites:
+  - name: gym-frontend
+    branch: main
+    root: frontend
+    buildCommand: npm install && npm run build
+    publishDirectory: dist
+    plan: free
