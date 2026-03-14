@@ -12,7 +12,8 @@ const allowedOrigins = process.env.ALLOWED_ORIGINS
   : [
       'http://localhost:5173',
       'http://localhost:5174',
-      'https://ai-based-gym-equipment.vercel.app'
+      'https://ai-based-gym-equipment.vercel.app',
+      'https://ai-gym-equipment.netlify.app'
     ];
 
 app.use(
